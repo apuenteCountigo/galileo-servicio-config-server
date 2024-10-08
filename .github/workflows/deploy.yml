@@ -46,7 +46,7 @@ jobs:
           script: |
             ssh -i ~/id_rsaalain mome@192.168.0.212 '
             cd galileo-dev-v1.1/config-server
-            if [ ! -d "servicio-config-server" ]; then
+            if [ ! -d "galileo-servicio-config-server" ]; then
               echo "validada galileo-dev-v1.1/config/servicio-config-server" &&
               git clone https://github.com/apuenteCountigo/galileo-servicio-config-server.git
             fi
