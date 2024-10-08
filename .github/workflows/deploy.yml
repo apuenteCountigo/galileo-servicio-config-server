@@ -59,5 +59,13 @@ jobs:
             export PATH=/opt/maven/bin:$PATH && mvn clean install -DskipTests &&
             mv ./target/springboot-servicio-config-server-0.0.1-SNAPSHOT.jar ../../servicio-config-server.jar &&
             cd ../../../ &&
-            ls'
+            CONTAINER_NAME="servicio-config-server" &&
+            IMAGE_NAME=$(docker inspect --format='{{.Config.Image}}' "$CONTAINER_NAME") &&
+            if [[ -n "$IMAGE_NAME" ]]; then
+              docker stop "$CONTAINER_NAME" &&
+              docker rm "$CONTAINER_NAME" &&
+              docker rmi "$IMAGE_NAME" &&
+              echo "$IMAGE_NAME"
+            fi;
+            docker compose up servicio-config-server -d'
             exit
