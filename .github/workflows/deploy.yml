@@ -45,11 +45,12 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             ssh -i ~/id_rsaalain mome@192.168.0.212 '
-            if [ ! -d "galileo-dev-v1.1/config/galileo-servicio-config-server" ]; then
-              echo "validada galileo-dev-v1.1/config/galileo-servicio-config-server"
+            cd galileo-dev-v1.1/config
+            if [ ! -d "galileo-servicio-config-server" ]; then
+              echo "validada galileo-dev-v1.1/config/galileo-servicio-config-server" &&
               git clone https://github.com/apuenteCountigo/galileo-servicio-config-server.git galileo-dev-v1.1/config
             fi
-            cd galileo-dev-v1.1/config/galileo-servicio-config-server &&
+            cd galileo-servicio-config-server &&
             git fetch origin &&
             git checkout version-1.1 &&
             git reset --hard origin/version-1.1 &&
