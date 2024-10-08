@@ -44,7 +44,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            ssh -i ~/id_rsa.pub mome@192.168.0.212 '
+            ssh -i ~/id_rsaalain mome@192.168.0.212 '
             if [ ! -d "galileo-dev-v1.1/config/galileo-servicio-config-server" ]; then
               git clone https://github.com/apuenteCountigo/galileo-servicio-config-server.git galileo-dev-v1.1/config
             fi
