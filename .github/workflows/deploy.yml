@@ -45,7 +45,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             ssh -i ~/id_rsaalain mome@192.168.0.98 '
-            cd galileo-newdev/evidencias/galileo-servicio-config-server &&
+            cd galileo-newdev/config/galileo-servicio-config-server &&
             git fetch origin &&
             git checkout main &&
             git reset --hard origin/main &&
