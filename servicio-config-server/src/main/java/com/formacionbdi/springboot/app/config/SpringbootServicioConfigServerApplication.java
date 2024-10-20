@@ -16,7 +16,7 @@ public class SpringbootServicioConfigServerApplication implements CommandLineRun
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("**************************************");
-		System.out.println("CONFIG V1.1-24-10-09 16:06");
+		System.out.println("CONFIG V1.1.0 24-10-20 17:01");
 	}
 
 }
